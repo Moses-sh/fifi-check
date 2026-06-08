@@ -429,6 +429,9 @@ async function getLLMResponse(query, faqMatches) {
 
 ${faqMatches.map(faq => `問題：${faq.q}\n答案：${faq.a}`).join('\n\n')}
 
+當你根據以上資料回答時，請加上以下來源說明：
+「📖 資料來源：https://sites.google.com/view/hktv-merc-faq/」
+
 如果用戶問嘅問題喺上面找不到，你可以根據你對 HKTVmall 嘅了解回答，但如果唔確定就話「我建議你聯絡你的 RM 或 Fiona (FIFI CHECK) 商戶服務團隊的 RM」。
 
 記住：
@@ -472,7 +475,16 @@ function getFAQResponse(query, faqMatches) {
   // 返回最匹配的 FAQ
   const bestMatch = faqMatches[0];
   
-  return `根據 HKTV 商戶支援資料，我找到以下可能相關的答案：\n\n📌 ${bestMatch.q}\n\n${bestMatch.a}\n\n---\n💡 如有其他問題，請繼續提問！`;
+  return `根據 HKTV 商戶支援資料，我找到以下可能相關的答案：
+
+📌 ${bestMatch.q}
+
+${bestMatch.a}
+
+---
+📖 資料來源：https://sites.google.com/view/hktv-merc-faq/
+
+💡 如有其他問題，請繼續提問！`;
 }
 
 // ================================================
