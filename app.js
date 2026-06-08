@@ -125,7 +125,7 @@ function checkAuthStatus() {
     if (state.apiKey) {
       showChatView();
     } else {
-      showModal(elements.apiKeyModal);
+      showChatView();
     }
   }
 }
@@ -150,7 +150,7 @@ function handleLogin(e) {
     localStorage.setItem('fifi_auth', JSON.stringify(state.user));
 
     setLoginLoading(false);
-    showModal(elements.apiKeyModal);
+    showChatView();
     
   }, 1000);
 }

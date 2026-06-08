@@ -127,37 +127,6 @@
     </div>
   </div>
 
-  <!-- API Key Setup Modal -->
-  <div class="modal-overlay" id="apiKeyModal" style="display: none;">
-    <div class="modal">
-      <div class="modal-icon">🔑</div>
-      <h3>設定 AI API Key</h3>
-      <p>請輸入您的 AI API Key 以啟用 FIFI CHECK 功能</p>
-      <div class="form-group">
-        <label for="apiKeyInput">API Key</label>
-        <input type="password" id="apiKeyInput" placeholder="sk-..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
-      </div>
-      <div class="api-provider-select">
-        <label>選擇 AI 提供商：</label>
-        <div class="provider-options">
-          <label class="provider-option">
-            <input type="radio" name="apiProvider" value="openai" checked>
-            <span>OpenAI (GPT-4o)</span>
-          </label>
-          <label class="provider-option">
-            <input type="radio" name="apiProvider" value="deepseek">
-            <span>DeepSeek</span>
-          </label>
-        </div>
-      </div>
-      <p class="api-key-note">您的 API Key 只會保存在本地瀏覽器，不會上傳到任何伺服器</p>
-      <div class="modal-actions">
-        <button class="btn-modal-cancel" id="btnSkipApiKey">稍後設定</button>
-        <button class="btn-modal-confirm" id="btnSaveApiKey">儲存並繼續</button>
-      </div>
-    </div>
-  </div>
-
   <script src="faq-data.js"></script>
   <script src="app.js"></script>
 </body>
