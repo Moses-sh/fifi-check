@@ -343,7 +343,7 @@ async function sendMessage() {
     addMessage('ai', response);
   } catch (error) {
     console.error('AI Error:', error);
-    addMessage('ai', `抱歉，我遇到了一些問題：${error.message}\n\n請稍後再試，或聯絡商戶服務團隊。`);
+    addMessage('ai', `抱歉，我遇到了一些問題：${error.message}\n\n請稍後再試，或聯絡 Fiona (FIFI CHECK) 商戶服務團隊的 RM。`);
   }
   
   showTyping(false);
@@ -429,7 +429,7 @@ async function getLLMResponse(query, faqMatches) {
 
 ${faqMatches.map(faq => `問題：${faq.q}\n答案：${faq.a}`).join('\n\n')}
 
-如果用戶問嘅問題喺上面找不到，你可以根據你對 HKTVmall 嘅了解回答，但如果唔確定就話「我建議你聯絡你的 RM 或商戶服務團隊」。
+如果用戶問嘅問題喺上面找不到，你可以根據你對 HKTVmall 嘅了解回答，但如果唔確定就話「我建議你聯絡你的 RM 或 Fiona (FIFI CHECK) 商戶服務團隊的 RM」。
 
 記住：
 - 唔好胡亂猜測不確定的資訊
@@ -466,7 +466,7 @@ ${faqMatches.map(faq => `問題：${faq.q}\n答案：${faq.a}`).join('\n\n')}
 
 function getFAQResponse(query, faqMatches) {
   if (faqMatches.length === 0) {
-    return `感謝您嘅提問！\n\n目前我未能找到完全匹配嘅答案。\n\n建議您：\n1. 嘗試使用其他關鍵字搜尋\n2. 聯絡您的 RM 查詢\n3. 聯絡商戶服務團隊：merchant@hktv.com.hk\n\n或輸入「help」查看我可回答的問題範疇。`;
+    return `感謝您嘅提問！\n\n目前我未能找到完全匹配嘅答案。\n\n建議您：\n1. 嘗試使用其他關鍵字搜尋\n2. 聯絡您的 RM 查詢\n3. 聯絡 Fiona (FIFI CHECK) 商戶服務團隊的 RM\n\n或輸入「help」查看我可回答的問題範疇。`;
   }
 
   // 返回最匹配的 FAQ
