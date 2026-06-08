@@ -49,7 +49,6 @@ function initElements() {
 
   // 登入表單
   elements.loginForm = document.getElementById('loginForm');
-  elements.storeIdInput = document.getElementById('storeId');
   elements.btnLogin = document.getElementById('btnLogin');
   elements.errorMessage = document.getElementById('errorMessage');
 
@@ -134,21 +133,6 @@ function checkAuthStatus() {
 function handleLogin(e) {
   e.preventDefault();
   
-  const storeId = elements.storeIdInput.value.trim().toUpperCase();
-
-  // 驗證
-  if (!storeId) {
-    showError('請填寫 Store ID');
-    return;
-  }
-
-  // Store ID 格式驗證 (H/B/P/C + 7位數字)
-  const storeIdPattern = /^[HBPChbpc]\d{7}$/;
-  if (!storeIdPattern.test(storeId)) {
-    showError('Store ID 格式不正確（應為 H/B/P/C + 7位數字，如 H3626001）');
-    return;
-  }
-
   // 顯示 loading
   setLoginLoading(true);
   hideError();
@@ -158,7 +142,7 @@ function handleLogin(e) {
     // 登入成功
     state.isLoggedIn = true;
     state.user = {
-      storeId: storeId,
+      storeId: 'Guest',
       loginTime: new Date().toISOString()
     };
 
